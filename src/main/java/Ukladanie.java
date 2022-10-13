@@ -120,7 +120,8 @@ public class Ukladanie extends Thread implements Runnable {
             int intA = 1;
             int myLookingWordLength = 0;
 //                usupelnianiePasujacychSlow();
-            for (int i = 0; i < 37; i++) {
+            // ---------------------------------------------------------------------------------------------------------------------------------------
+            for (int i = 0; i < 20; i++) {
                 if(intA == 1) {
                     KrzyzowkaRysowanie.lOrderList.setText("Wyszukuje slowo " + (i+1));
                     intA = 0;

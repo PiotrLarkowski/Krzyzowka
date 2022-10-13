@@ -2,6 +2,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.geom.Rectangle2D;
+import java.io.FileNotFoundException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -1576,7 +1577,12 @@ public class KrzyzowkaRysowanie extends JFrame implements ActionListener {
             ukladanieKrzyzowki.stop();
             ukladanieKrzyzowki2.stop();
             this.dispose();
-            MenuKrzyzowka okienkoMenu = new MenuKrzyzowka();
+            MenuKrzyzowka okienkoMenu = null;
+            try {
+                okienkoMenu = new MenuKrzyzowka();
+            } catch (FileNotFoundException ex) {
+                throw new RuntimeException(ex);
+            }
             okienkoMenu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             okienkoMenu.setLocationRelativeTo(null);
             okienkoMenu.setUndecorated(true);
